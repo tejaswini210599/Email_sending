@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+    <title> Transparent Login Form Design </title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">   
+</head>
+    <body>
+        
+    <div class="login-box">
+    <img src="static/avatar.png" class="avatar">
+        <h1>Login Here</h1>
+            <form method="POST" action="">
+              {% csrf_token %}
+            <p>Email ID</p>
+            <input type="email" name="email" placeholder="Enter Email address">
+            <p>Subject</p>
+            <input type="text" name="sub" placeholder="Enter Subject">
+            <p>Message</p>
+            <input type="text" name="mess" placeholder="Enter Message">
+            <input type="submit" name="submit" value="Login">  
+            </form>
+
+
+            {% if success %}
+            {{success}}
+            {% endif %}
+        
+        
+        </div>
+    
+    </body>
+</html>
